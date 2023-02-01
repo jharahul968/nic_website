@@ -7,5 +7,11 @@
     <li><a href="/tutorial">Tutorial</a></li>
     <li><a href="/discussion">Discussion</a></li>
     <li><a href="/contact">Contact</a></li>
-    <li style="float:right"><a class="active" href="/about">About</a></li>
+    <li><a href="/about">About</a></li>
+
+    {% if user.is_authenticated %}
+    <li style="float:right"><a class="active" href="/logout">Logout</a></li>
+    {%else%}
+    <li style="float:right"><a class="active" href="/login">Login</a></li>
+    {%endif%}
   </ul>

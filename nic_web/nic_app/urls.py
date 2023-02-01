@@ -1,6 +1,8 @@
 from django.urls import path, include
 from .views import *
 
+app_name='nic_app'
+
 urlpatterns = [
     # path('hello', hello, name='hello'),
     
@@ -9,6 +11,10 @@ urlpatterns = [
     path('contact', contact, name='contact'),
     path('discussion', discussion, name='discussion'),
     path('purchase', purchase, name='purchase'),
-    path('tutorial', tutorial, name='tutorial')
-    
+    path('tutorial', tutorial, name='tutorial'),
+    path("register", register_request, name="register"),
+    path("login", login_request, name="login"),
+    path("logout", logout_request, name= "logout"),
+    path("password_reset", password_reset_request, name="password_reset")
+
 ]
