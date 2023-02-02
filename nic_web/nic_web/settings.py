@@ -135,11 +135,11 @@ MEDIA_URL = '/media/'
 
 
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = 587
-# EMAIL_HOST_USER = 'mail.ioehub@gmail.com'
-# EMAIL_HOST_PASSWORD = 'ayubjeutvhxexcam'
-# EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'mail.ioehub@gmail.com'
+EMAIL_HOST_PASSWORD = 'ayubjeutvhxexcam'
+EMAIL_USE_TLS = True
