@@ -1,10 +1,12 @@
-{% comment %} {% extends "header.html" %}  {% endcomment %}
+{% extends "header.html" %} 
 
 
-{% include 'navbar.html' %}
 {% load static %}
 <link rel="stylesheet" href="{% static 'styles/style.css' %}">
 
-<title>Singha's Gurukul | Contact</title>
+{%block title%}Singha's Gurukul | Contact{%endblock%}
+{%block content%}
+{% include 'navbar.html' %}
 
 Contact
+{%endblock%}

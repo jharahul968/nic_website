@@ -1,8 +1,14 @@
-{% include 'navbar.html' %}
+{% extends "header.html" %} 
+
+
+
 {% load static %}
 <link rel="stylesheet" href="{% static 'styles/style.css' %}">
 
-<title>Singha's Gurukul | Home</title>
+{%block title%}Singha's Gurukul | Home{%endblock%}
 
+{%block content%}
+{% include 'navbar.html' %}
 
 Home
+{%endblock%}

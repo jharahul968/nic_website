@@ -1,20 +1,29 @@
-{% comment %} {% extends "header.html" %}  {% endcomment %}
+{% extends "header.html" %} 
 
 
-{% include 'navbar.html' %}
+
 {% load static %}
 <link rel="stylesheet" href="{% static 'styles/style.css' %}">
 
-<title>Singha's Gurukul | Projects</title>
-
-
+{%block title%}Singha's Gurukul | Projects{%endblock%}
+{%block content%}
+{% include 'navbar.html' %}
 Projects
+<div class="container"
+ style="
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: auto;
+grid-gap: 10px;
+">
 {% for item in projects %}
-<div class="item">
+<div class="item" style="text-align: center;">
     <h2>{{ item.name }}</h2>
     <p>{{ item.description }}</p>
-    <img src="{{ item.image.url }}">
+    <img src="{{ item.image.url }}" width="300" height="300" alt="{{item.name}}">
 
 
 </div>
 {% endfor %}
+</div>
+{%endblock%}
