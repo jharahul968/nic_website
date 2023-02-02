@@ -1,0 +1,11 @@
+{% comment %} {% extends "header.html" %}  {% endcomment %}
+{% block content %} 
+
+<form method="post">
+    {% csrf_token %}
+    <label for="new_username">New username:</label>
+    <input type="text" id="new_username" name="new_username">
+    <button type="submit">Save</button>
+  </form>
+
+  {% endblock %}

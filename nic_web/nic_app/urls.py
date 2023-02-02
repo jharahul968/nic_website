@@ -11,10 +11,12 @@ urlpatterns = [
     path('contact', contact, name='contact'),
     path('discussion', discussion, name='discussion'),
     path('purchase', purchase, name='purchase'),
+    path('projects', projects, name='projects'),
     path('tutorial', tutorial, name='tutorial'),
     path("register", register_request, name="register"),
     path("login", login_request, name="login"),
     path("logout", logout_request, name= "logout"),
-    path("password_reset", password_reset_request, name="password_reset")
-
+    path("password_reset", password_reset_request, name="password_reset"),
+    path("change_username", change_username, name="change_username"),
+    path('user',user,name='user')
 ]

@@ -15,6 +15,7 @@ from django.db.models.query_utils import Q
 from django.utils.http import urlsafe_base64_encode
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -52,6 +53,7 @@ def login_request(request):
 	form = AuthenticationForm()
 	return render(request=request, template_name="login.html", context={"login_form":form})
 
+@login_required
 def logout_request(request):
 	logout(request)
 	messages.info(request, "You have successfully logged out.") 
@@ -85,7 +87,16 @@ def password_reset_request(request):
 	password_reset_form = PasswordResetForm()
 	return render(request=request, template_name="password/password_reset.html", context={"password_reset_form":password_reset_form})
 
-
+@login_required
+def change_username(request):
+    if request.method=='POST':
+        new_username=request.POST.get('new_username')
+        user=User.objects.get(username=request.user.username)
+        user.username=new_username
+        user.save()
+        return redirect('nic_app:home')
+    return render(request,'change_username.html')
+        
 
 def home(request):
     return render(request, 'home.html')
@@ -106,3 +117,9 @@ def purchase(request):
 def tutorial(request):
     return render(request, 'tutorial.html')
 
+def projects(request):
+    projects=Project.objects.all()
+    return render(request, 'projects.html', {'projects':projects})
+
+def user(request):
+    return render(request, 'user.html')

@@ -3,6 +3,7 @@
 
 <ul>
     <li><a href="/">Home</a></li>
+    <li><a href="/projects">Projects</a></li>
     <li><a href="/purchase">Purchase</a></li>
     <li><a href="/tutorial">Tutorial</a></li>
     <li><a href="/discussion">Discussion</a></li>
@@ -11,6 +12,7 @@
 
     {% if user.is_authenticated %}
     <li style="float:right"><a class="active" href="/logout">Logout</a></li>
+    <li class='user-related' style='float:right'><a href="/user">{{user.username}}</a></li>
     {%else%}
     <li style="float:right"><a class="active" href="/login">Login</a></li>
     {%endif%}
