@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{% static 'styles/style.css' %}">
 
 <ul>
-    <li><a href="/"><img src="{%static 'images/icon.png'%}" alt="icon" style='object-fit:contain; height: 30px;'></a></li>
+    <li><a href="/"><img class="icon_image" src="{%static 'images/icon.png'%}" alt="icon"></a></li>
     <li><a href="/">Home</a></li>
     <li><a href="/projects">Projects</a></li>
     <li><a href="/purchase">Purchase</a></li>
@@ -13,7 +13,7 @@
 
     {% if user.is_authenticated %}
     <li style="float:right"><a class="active" href="/logout">Logout</a></li>
-    <li class='user-related' style='float:right'><a href="/user">{{user.username}}</a></li>
+    <li class='username' style='float:right'><a href="/user">{{user.username}}</a></li>
     {%else%}
     <li style="float:right"><a class="active" href="/login">Login</a></li>
     {%endif%}
