@@ -263,8 +263,9 @@ ul{
 
     nav ul{
         position: absolute;
-        top: 70px;
-        left: 0;
+        z-index: 1;
+        top: 120px;
+        left: 30px;
         /* background: #fff; */
         width: 100%;
         overflow: hidden;
