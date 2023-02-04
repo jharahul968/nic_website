@@ -99,7 +99,10 @@ def change_username(request):
         
 
 def home(request):
-    return render(request, 'home.html')
+    instruments=Instrument.objects.all()
+    print(instruments)
+    print(type(instruments))
+    return render(request, 'home.html', {'instruments':instruments})
 
 def about(request):
     return render(request, 'about.html')

@@ -1,4 +1,4 @@
-{% extends "header.html" %} 
+{% extends "header.html" %}
 
 
 
@@ -9,28 +9,117 @@
 
 {%block content%}
 
-{% include 'navbar.html' %}
+<div class="header">
+
+  <div class="container">
+
+    {% include 'navbar.html' %}
 
 
+    <div class="row">
+
+      <div class="col-2">
+        <h1>Welcome to <br> Innovation hub</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex molestias totam illum sit cum voluptate in a modi
+          maxime voluptates, ducimus fuga quibusdam molestiae vero animi consequatur voluptas maiores eveniet?</p>
+        <a href="" class="btn">Explore now &#8594;</a>
+
+      </div>
+      <div class="col-2">
+        <img src="{% static 'images/icon.png' %}" alt="image">
+      </div>
+
+    </div>
 
 
-<div class='container_home'>
-  <img class='home_image' src="{% static 'images/nic.jpg'%}"  >
-  <div class='div_in_container'></div>
-  <div class='body_home'>
-  <h1>Welcome to My Website</h1>
-  <p>This is the homepage of my website.</p>
   </div>
+
+
+</div>
+
+
+<!-- featured categories -->
+
+<!-- <div class="categories">
+  <div class="small-container">
+    <div class="row">
+
+      <div class="col-3">
+        <img src="{% static 'images/category-0.png'%}" alt="">
+
+      </div>
+      <div class="col-3">
+        <img src="{% static 'images/category-1.png'%}" alt="">
+
+      </div>
+
+      <div class="col-3">
+        <img src="{% static 'images/category-2.png'%}" alt="">
+
+
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<!-- featured products -->
+
+<div class="small-container">
+
+  <h2 class="title"><a href='/purchase'>Featured Products</a></h2>
+  <div class="row">
+
+
+    {%for item in instruments|slice:":4"%}
+    <div class="col-4">
+      <h2>{{ item.name }}</h2>
+      <p>Rs. {{ item.price }}</p>
+      <p>{{ item.description }}</p>
+      <img src="{{ item.image.url }}" width="300" height="300" alt="{{item.name}}">
+    </div>
+    {% endfor %}
+
+  </div>
+
+
+
+  <h2 class="title">Ongoing Projects</h2>
+
+  <div class="row">
+
+    <div class="col-4">
+
+      <img src="{%static 'images/category-0.png'%}" alt="">
+      <h4>Machine 0</h4>
+
+
+      <p>Rs. 50</p>
+    </div>
+    <div class="col-4">
+
+      <img src="{%static 'images/category-1.png'%}" alt="">
+      <h4>Machine 0</h4>
+      <p>Rs. 50</p>
+    </div>
+    <div class="col-4">
+
+      <img src="{%static 'images/category-2.png'%}" alt="">
+      <h4>Machine 0</h4>
+      <p>Rs. 50</p>
+    </div>
+    <div class="col-4">
+
+      <img src="{%static 'images/icon.png'%}" alt="">
+      <h4>Machine 0</h4>
+      <p>Rs. 50</p>
+    </div>
+  </div>
+
 </div>
 
 
 
-<div class='footer_home'>
-  <p>Copyright © 2023 My Website</p>
-</div>
-
-
-
-
+{% include 'footer.html' %}
 
 {%endblock%}

@@ -1,11 +1,16 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'styles/style.css' %}">
 
-<ul>
-    <li><a href="/"><img class="icon_image" src="{%static 'images/icon.png'%}" alt="icon"></a></li>
+
+<div class='navbar'>
+  <div class='logo'>
+    <img src="{%static 'images/icon.png'%}" width="125px">
+  </div>
+  <nav>
+<ul id="MenuItems">
     <li><a href="/">Home</a></li>
-    <li><a href="/projects">Projects</a></li>
-    <li><a href="/purchase">Purchase</a></li>
+    <!-- <li><a href="/projects">Projects</a></li> -->
+    <li><a href="/purchase">Projects</a></li>
     <li><a href="/tutorial">Tutorial</a></li>
     <li><a href="/discussion">Discussion</a></li>
     <li><a href="/contact">Contact</a></li>
@@ -18,3 +23,27 @@
     <li style="float:right"><a class="active" href="/login">Login</a></li>
     {%endif%}
   </ul>
+  <img src="{%static 'images/cart.png'%}" alt="cart" width="30px" height="30px">
+</nav>
+<img src="{%static 'images/menu.png'%}" alt="menu" class="menu-icon" onclick="menutoggle()">
+
+
+</div>
+
+
+
+
+
+<script>
+var MenuItems=document.getElementById("MenuItems");
+  MenuItems.style.maxHeight='0px';
+  function menutoggle(){
+    if (MenuItems.style.maxHeight=='0px'){
+      MenuItems.style.maxHeight='200px';
+    }
+    else{
+      MenuItems.style.maxHeight='0px';
+    }
+  }
+
+</script>

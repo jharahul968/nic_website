@@ -7,22 +7,26 @@
 
 {%block title%}Singha's Gurukul | Purchase{%endblock%}
 {%block content%}
-{% include 'navbar.html' %}
-Purchase
-<div class="container"
- style="
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-grid-template-rows: auto;
-grid-gap: 10px;
-">
-{% for item in instruments %}
-<div class="item" style="text-align: center;">
-  <h2>{{ item.name }}</h2>
-  <p>Rs. {{ item.price }}</p>
-  <p>{{ item.description }}</p>
-  <img src="{{ item.image.url }}" width="300" height="300" alt="{{item.name}}"/>
-</div>
-{% endfor %}
-</div>
+
+<div class="projects__container">
+  <div>
+  {% include 'navbar.html' %}
+  </div>
+  
+  <div class="projects__item">
+  {% for item in instruments %}
+  <div>
+      <h2>{{ item.name }}</h2>
+      <p>Rs. {{ item.price }}</p>
+      <p>{{ item.description }}</p>
+      <img src="{{ item.image.url }}" width="300" height="300" alt="{{item.name}}">
+  </div>
+  {% endfor %}
+  </div>
+  
+  <div>
+  {% include 'footer.html' %}
+  </div>
+  </div>
+
 {%endblock%}
