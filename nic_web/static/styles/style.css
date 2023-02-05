@@ -243,6 +243,11 @@ h4{
     width: 100%;
     bottom: 0;
 }
+
+projects__footer{
+    bottom: 0;
+}
+
 .projects_container{
     display: flex;
     flex-direction: column;
