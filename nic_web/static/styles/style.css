@@ -98,7 +98,6 @@ p{
 
 }
 
-
 .buy_btn:hover{
     background: #563434;
 }
@@ -171,7 +170,7 @@ button {
 .col-4{
     flex-basis: 25%;
     padding: 10px;
-    min-width: 200px;
+    min-width: 250px;
     margin-bottom: 50px;
     transition: transform 0.5s;
 }
@@ -181,10 +180,11 @@ button {
 
 .title{
     text-align: center;
-    margin: 0 auto 80px;
+    margin: 0 auto 30px;
     position: relative;
     line-height: 60px;
     color: #555;
+    margin-top: 40px;
 }
 
 .title::after{

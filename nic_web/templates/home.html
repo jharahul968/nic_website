@@ -46,7 +46,7 @@
   <h2 class="title"><a href='/projects'>Featured Products</a></h2>
   <div class="home__item">
 
-    {%for item in instruments|slice:":3"%}
+    {%for item in projects|slice:":3"%}
     <div class="col-3">
       <h2>{{ item.name }}</h2>
       <p>Rs. {{ item.price }}</p>
@@ -68,35 +68,14 @@
   <h2 class="title">Ongoing Projects</h2>
 
   <div class="row">
-
+    {%for item in ongoing|slice:":4"%}
     <div class="col-4">
-
-      <img src="{%static 'images/category-0.png'%}" alt="">
-      <h4>Machine 0</h4>
-
-
-      <p>Rs. 50</p>
+      <h4>{{ item.name }}</h4>
+      <p>{{ item.description }}</p>
+      <img src="{{ item.image.url }}" alt="{{item.name}}">
     </div>
-    <div class="col-4">
-
-      <img src="{%static 'images/category-1.png'%}" alt="">
-      <h4>Machine 0</h4>
-      <p>Rs. 50</p>
+    {% endfor %}
     </div>
-    <div class="col-4">
-
-      <img src="{%static 'images/category-2.png'%}" alt="">
-      <h4>Machine 0</h4>
-      <p>Rs. 50</p>
-    </div>
-    <div class="col-4">
-
-      <img src="{%static 'images/icon.png'%}" alt="">
-      <h4>Machine 0</h4>
-      <p>Rs. 50</p>
-    </div>
-  </div>
-
 </div>
 
 

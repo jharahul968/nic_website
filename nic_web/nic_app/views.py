@@ -99,8 +99,9 @@ def change_username(request):
         
 
 def home(request):
-    instruments=Project.objects.all()
-    return render(request, 'home.html', {'instruments':instruments})
+    projects=Project.objects.all()
+    ongoing=Ongoing.objects.all()
+    return render(request, 'home.html', {'projects':projects, 'ongoing':ongoing})
 
 def about(request):
     return render(request, 'about.html')
@@ -112,8 +113,8 @@ def discussion(request):
     return render(request, 'discussion.html')
 
 def projects(request):
-    instruments=Project.objects.all()
-    return render(request, 'projects.html', {'instruments':instruments})
+    projects=Project.objects.all()
+    return render(request, 'projects.html', {'projects':projects})
 
 def tutorial(request):
     return render(request, 'tutorial.html')
