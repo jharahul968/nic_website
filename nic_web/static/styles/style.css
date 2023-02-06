@@ -18,6 +18,7 @@ body{
 nav{
     flex:1;
     text-align: right;
+    font-weight: bold;
 }
 
 nav ul{
@@ -109,7 +110,11 @@ p{
 }
 
 .header{
-    /* background: radial-gradient(#fff, #ffd6d6); */
+        /* background: radial-gradient(#fff, #ffd6d6); */
+        /* height: 100%; */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
 }
 
 .header .row{

@@ -9,7 +9,7 @@
 
 {%block content%}
 
-<div class="header">
+<div class="header" style="background-image: url({% static 'images/nic.png' %});">
 
   <div class="container">
 
@@ -19,14 +19,13 @@
     <div class="row">
 
       <div class="col-2">
-        <h1>Welcome to <br> Innovation hub</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex molestias totam illum sit cum voluptate in a modi
-          maxime voluptates, ducimus fuga quibusdam molestiae vero animi consequatur voluptas maiores eveniet?</p>
-        <a href="" class="btn">Explore now &#8594;</a>
+        <h1>Welcome to <br> Singha's Gurukul</h1>
+        <p>Fail, fail & fail to master and unlock your true potential.</p>
+        <a href="" class="btn">More about Singha's Gurukul &#8594;</a>
 
       </div>
       <div class="col-2">
-        <img src="{% static 'images/icon.png' %}" alt="image">
+        <img src="{% static 'images/icon1.png' %}" alt="image">
       </div>
 
     </div>
@@ -43,15 +42,15 @@
 
 <div class="projects_container">
 
-  <h2 class="title"><a href='/projects'>Featured Products</a></h2>
+  <h2 class="title"><a href='/projects'>Explore the future of learning</a></h2>
   <div class="home__item">
 
     {%for item in projects|slice:":3"%}
     <div class="col-3">
       <h2>{{ item.name }}</h2>
-      <p>Rs. {{ item.price }}</p>
       <p>{{ item.description }}</p>
       <img src="{{ item.image.url }}" width="300" height="300" alt="{{item.name}}">
+      <p>Rs. {{ item.price }}</p>
       <div class="buy_options">
         
       <a class="buy_btn">Buy this &#8594;</a>
@@ -62,7 +61,9 @@
     {% endfor %}
 </div>
 </div>
-<div class="small-container">
+
+
+<!-- <div class="small-container">
 
 
   <h2 class="title">Ongoing Projects</h2>
@@ -76,7 +77,7 @@
     </div>
     {% endfor %}
     </div>
-</div>
+</div> -->
 
 
 
