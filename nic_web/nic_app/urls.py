@@ -17,5 +17,6 @@ urlpatterns = [
     path("logout", logout_request, name= "logout"),
     path("password_reset", password_reset_request, name="password_reset"),
     path("change_username", change_username, name="change_username"),
-    path('user',user,name='user')
+    path('user',user,name='user'),
+    path('cart',cart,name='cart'),
 ]

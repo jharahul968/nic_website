@@ -43,5 +43,20 @@
       crossorigin="anonymous"
     >
   </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var closeButtons = document.querySelectorAll(".close-button");
+      for (var i = 0; i < closeButtons.length; i++) {
+        closeButtons[i].addEventListener("click", function(event) {
+          event.target.parentNode.style.display = "none";
+        });
+      }
+    });
+    </script> 
+    <script>
+      $(document).ready(function() {
+        $('#messages').show();
+      });
+    </script>
   </body>
 </html>

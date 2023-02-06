@@ -100,8 +100,7 @@ def change_username(request):
 
 def home(request):
     projects=Project.objects.all()
-    ongoing=Ongoing.objects.all()
-    return render(request, 'home.html', {'projects':projects, 'ongoing':ongoing})
+    return render(request, 'home.html', {'projects':projects})
 
 def about(request):
     return render(request, 'about.html')
@@ -119,6 +118,15 @@ def projects(request):
 def tutorial(request):
     return render(request, 'tutorial.html')
 
-
 def user(request):
     return render(request, 'user.html')
+
+
+@login_required(login_url='/login')
+def cart(request):
+    if not request.user.is_authenticated:
+        messages.info(request, "You must be logged in to view this page.")
+        return redirect('login')
+    
+    cart=Cart.objects.all()
+    return render(request, 'cart.html',{'cart':cart})

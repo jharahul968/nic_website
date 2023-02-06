@@ -12,16 +12,17 @@
 <div class="header" style="background-image: url({% static 'images/nic.png' %});">
 
   <div class="container">
-
+    <div class='home_nav'>
     {% include 'navbar.html' %}
-
+    </div>
 
     <div class="row">
 
-      <div class="col-2">
-        <h1>Welcome to <br> Singha's Gurukul</h1>
-        <p>Fail, fail & fail to master and unlock your true potential.</p>
-        <a href="" class="btn">More about Singha's Gurukul &#8594;</a>
+      <div class="col-2 text_home">
+        {% comment %} <h1>Welcome to <br> Singha's Gurukul</h1> {% endcomment %}
+        <h1 style='color: #fff;'>Singha's Gurukul</h1>
+        <p style='color: #fff;'>Fail, fail & fail to master and unlock your true potential.</p>
+        <a href="/about" class="btn">More about Singha's Gurukul &#8594;</a>
 
       </div>
       <div class="col-2">

@@ -12,6 +12,6 @@ class ProjectAdmin(admin.ModelAdmin):
     pass
 
 
-@admin.register(Ongoing)
-class OngoingAdmin(admin.ModelAdmin):
+@admin.register(Cart)
+class CartAdmin(admin.ModelAdmin):
     pass

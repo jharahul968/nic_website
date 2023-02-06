@@ -1,7 +1,8 @@
 {% if messages %}
-<ul class="messages">
+<ul class="messages" style='margin:0; text-align:center; background-color:pink'>
     {% for message in messages %}
-    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}   <button class="close-button" type="button" style='background-color:pink; cursor:pointer; font-weight:bold;'> x </button>
+    </li>
     {% endfor %}
 </ul>
 {% endif %}
