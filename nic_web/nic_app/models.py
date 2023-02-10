@@ -12,13 +12,14 @@ class Project(models.Model):
     description = models.TextField()
     image = models.ImageField(
         upload_to='images/projects/', default=default_image)
-
+    # added_date=models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return self.name
 
 class Cart(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='cart')
     items = models.ManyToManyField(Project, through='CartItem')
+    # created_date = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
         return f"{self.user}\'s Cart"
