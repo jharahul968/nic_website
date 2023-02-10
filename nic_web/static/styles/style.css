@@ -35,6 +35,10 @@ nav ul li{
     margin-right: 20px;
 }
 
+nav ul li:hover{
+    transform: translateY(-2px);
+}
+
 a{
     text-decoration: none;
     color: #555;
@@ -112,6 +116,23 @@ p{
     background: #563434;
 }
 
+.buy_all_btn{
+    display: inline-block;
+    background: #ff523b;
+    color: #fff !important;
+    padding: 8px 30px;
+    margin: 0;
+    border-radius: 30px;
+    transition: background 0.5s;
+    cursor: pointer;
+
+}
+
+.buy_all_btn:hover{
+    background: #563434;
+}
+
+
 .add_to_cart{
     width: 28px;
     margin-left: 20px;
@@ -155,6 +176,11 @@ button {
 .col-3:hover{
     transform: translateY(-5px);
 }
+
+.projects_items_col:hover{
+    transform: translateY(-5px);
+}
+
 .home__item{
     /* display: grid;
     grid-template-columns: repeat(3, 1fr); */

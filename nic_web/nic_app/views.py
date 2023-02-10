@@ -16,6 +16,7 @@ from django.utils.http import urlsafe_base64_encode
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
 from django.contrib.auth.decorators import login_required
+from django.db.models import F
 
 # Create your views here.
 
@@ -128,5 +129,52 @@ def cart(request):
         messages.info(request, "You must be logged in to view this page.")
         return redirect('login')
     
-    cart=Cart.objects.all()
-    return render(request, 'cart.html',{'cart':cart})
+    cart = Cart.objects.get(user=request.user)
+    cart_items=CartItem.objects.filter(cart=cart)
+    
+    total_price=0
+    total_quantity=0
+    for item in cart_items:
+        total_price +=item.item.price*item.quantity
+        total_quantity +=item.quantity
+    
+    return render(request, 'cart.html', {'cart_items': cart_items, 'total_quantity': total_quantity, 'total_price': total_price})
+
+
+@login_required(login_url='/login')
+def add_to_cart(request, pk):
+    if not request.user.is_authenticated:
+        messages.info(request, "You must be logged in to view this page.")
+        return redirect('login')
+    
+    obj=Project.objects.get(pk=pk)
+    cart, created = Cart.objects.get_or_create(user=request.user)
+    cart_item, created = CartItem.objects.get_or_create(cart=cart, item=obj)
+    cart_item.quantity +=  1
+    cart_item.save()
+
+    messages.success(request, f'{obj.name} added to cart.')
+    return redirect(request.META.get('HTTP_REFERER', '/'))
+
+    # carts=Cart.objects.get(user=request.user)
+    # return render(request, 'cart.html',{'cart':carts})
+    
+@login_required(login_url='/login')
+def remove_from_cart(request, pk):
+    if not request.user.is_authenticated:
+        messages.info(request, "You must be logged in to view this page.")
+        return redirect('login')
+    
+    obj=Project.objects.get(pk=pk)
+    cart = Cart.objects.get(user=request.user)
+    cart_item = CartItem.objects.get(cart=cart, item=obj)
+    cart_item.quantity -=  1
+    if cart_item.quantity==0:
+        cart_item.delete()
+    else:
+        cart_item.save()
+    messages.success(request, f'{obj.name} removed from cart.')
+    return redirect(request.META.get('HTTP_REFERER', '/'))
+
+    # carts=Cart.objects.get(user=request.user)
+    # return render(request, 'cart.html',{'cart':carts})

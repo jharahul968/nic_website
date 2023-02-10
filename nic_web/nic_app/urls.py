@@ -19,4 +19,7 @@ urlpatterns = [
     path("change_username", change_username, name="change_username"),
     path('user',user,name='user'),
     path('cart',cart,name='cart'),
+    path('add_to_cart/<int:pk>', add_to_cart, name='add_to_cart'),
+    path('remove_from_cart/<int:pk>', remove_from_cart, name='remove_from_cart'),
+
 ]

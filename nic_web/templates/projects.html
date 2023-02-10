@@ -15,13 +15,13 @@
 
   <div class="projects__item">
     {% for item in projects %}
-    <div>
+    <div class="projects_items_col">
       <h2>{{ item.name }}</h2>
-      <p>Rs. {{ item.price }}</p>
       <p>{{ item.description }}</p>
       <img src="{{ item.image.url }}" width="300" height="300" alt="{{item.name}}">
+      <p>Rs. {{ item.price }}</p>
       <a class="buy_btn">Buy this &#8594;</a>
-      <a class="add_to_cart"><img style="display:block; width:28px" src="{%static 'images/add-to-cart.png'%}" alt="add-to-cart"></a>
+      <a class="add_to_cart" href="{% url 'nic_app:add_to_cart' item.pk %}"><img style="display:block; width:28px" src="{%static 'images/add-to-cart.png'%}" alt="add-to-cart"></a>
     </div>
     {% endfor %}
   </div>

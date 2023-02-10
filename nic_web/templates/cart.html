@@ -1,22 +1,44 @@
-{% extends "header.html" %} 
+{% extends "header.html" %}
 
 
 {% load static %}
-<link rel="stylesheet" href="{% static 'styles/style.css' %}">
 
-{%block title%}Singha's Gurukul | Cart{%endblock%}
+<link rel="stylesheet" href="{% static 'styles/style.css' %}" />
+
+{%block title%}Singha's Gurukul | Purchase{%endblock%}
 {%block content%}
-<div class='cart_container'>
-    <div>
-{% include 'navbar.html' %}
+
+<div class="projects__container">
+  <div>
+    {% include 'navbar.html' %}
+  </div>
+
+  <div class="total_details" style="text-align:center; display: block;">
+    <hr>
+    <p>Total Quantity: {{total_quantity}}</p>
+    <p>Total Price: {{total_price}}</p>
+    <button class="buy_all_btn">Buy all &#8594;</button>
+    <hr>
+  </div>
+
+  <div class="projects__item">
+    {% for item in cart_items %}
+    <div class="projects_items_col">
+      <h2>{{ item.item.name }}</h2>
+      <p>{{ item.item.description }}</p>
+      <img src="{{ item.item.image.url }}" width="300" height="300" alt="{{item.item.name}}">
+      <p>Rs. {{ item.item.price }}</p>
+      <p>Quantity: {{ item.quantity }}</p>
+      <a class="buy_btn">Buy this &#8594;</a>
+      <a class="add_to_cart" href="{% url 'nic_app:remove_from_cart' item.pk %}"><img style="display:block; width:28px" src="{%static 'images/remove-from-cart.png'%}" alt="remove-from-cart"></a>
     </div>
+    {% endfor %}
+  </div>
 
 
-
-
-    
-<div class='about__footer'>
-{% include 'footer.html' %}
+  <div class='projects__footer'>
+    {% include 'footer.html' %}
+  </div>
 </div>
-</div>
+
 {%endblock%}
