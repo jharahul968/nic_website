@@ -15,25 +15,35 @@
   </div>
 
 
+<div clas="buy_portal" style="display: flex; flex-direction: row; justify-content: center;">
 
-  <div class="each_item_col">
+  <div class="each_item_buy" style="text-align: center;">
 
-      <h2>Name: {{ item.name }}</h2>
-      <p>Description: {{ item.description }}</p>
+      <h2>{{ item.name }}</h2>
+      <p>{{ item.description }}</p>
 
-      {% with query=item.name %}
+      <!-- {% with query=item.name %}
       <a href="https://www.google.com/search?q={{ query|urlencode }}" target="_blank">More details</a>
-      {% endwith %}
+      {% endwith %} -->
 
       <a href="{{ item.image.url }}" target="_blank" class="popup">
       <img src="{{ item.image.url }}" width="300" height="300" alt="{{item.name}}" style="padding-top:10px; padding-bottom:10px;">
       </a>
       
-      <p>Price: Rs. {{ item.price }}</p>
-      <a class="buy_btn" href="{% url 'nic_app:buy' item.pk %}">Buy this &#8594;</a>
-      <a class="add_to_cart" href="{% url 'nic_app:add_to_cart' item.pk %}"><img style="display:block; width:28px" src="{%static 'images/add-to-cart.png'%}" alt="add-to-cart"></a>
+      <p>Rs. {{ item.price }}</p>
+
+      <!-- <a class="buy_btn">Buy this &#8594;</a>
+      <a class="add_to_cart" href="{% url 'nic_app:add_to_cart' item.pk %}"><img style="display:block; width:28px" src="{%static 'images/add-to-cart.png'%}" alt="add-to-cart"></a> -->
 
   </div>
+
+  <div class="buy_options" style="margin-left: 30px; margin-top: 10%;">
+
+    <p>Contact 98XXXXXXXX to buy this product.</p>
+
+  </div>
+
+</div>
 
 
   <div class='projects__footer'>

@@ -424,3 +424,10 @@ ul{
     justify-content: center;
     padding-bottom: 20px;
 }
+
+.each_item_buy{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding-bottom: 20px;
+}

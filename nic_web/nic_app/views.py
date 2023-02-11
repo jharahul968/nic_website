@@ -197,3 +197,8 @@ def remove_from_cart(request, pk):
 def item(request, pk):
     item=Project.objects.get(pk=pk)
     return render(request, 'item.html', {'item':item})
+
+
+def buy(request, pk):
+    item=Project.objects.get(pk=pk)
+    return render(request, 'buy.html', {'item':item})

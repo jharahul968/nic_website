@@ -57,7 +57,7 @@
       </a>
 
       <div class="buy_options">
-      <a class="buy_btn">Buy this &#8594;</a>
+      <a class="buy_btn" href="{% url 'nic_app:buy' item.pk %}">Buy this &#8594;</a>
       <a class="add_to_cart" href="{% url 'nic_app:add_to_cart' item.pk %}"><img src="{%static 'images/add-to-cart.png'%}" alt="add-to-cart"></a>
     
     </div>

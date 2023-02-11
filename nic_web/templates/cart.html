@@ -33,7 +33,7 @@
       <p>Quantity: {{ item.quantity }}</p>
       </a>
 
-      <a class="buy_btn">Buy this &#8594;</a>
+      <a class="buy_btn" href="{% url 'nic_app:buy' item.item.pk %}">Buy this &#8594;</a>
       <a class="add_to_cart" href="{% url 'nic_app:remove_from_cart' item.item.pk %}"><img style="display:block; width:28px" src="{%static 'images/remove-from-cart.png'%}" alt="remove-from-cart"></a>
     </div>
     {% endfor %}
