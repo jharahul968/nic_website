@@ -75,6 +75,24 @@ p{
     max-width: 100%;
     padding: 50px 0;
 }
+
+.about_text{
+    padding: 40px;
+    flex-basis: 50%;
+    min-width: 300px;
+}
+.about_text img{
+    max-width: 30%;
+    padding: 10px;
+}
+
+.about_text h1{
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px 0;
+}
+
+
 .col-2 h1{
     font-size: 50px;
     line-height: 60px;
@@ -279,9 +297,9 @@ h4{
 
 .about__footer
 {
-    position: absolute;
+    /* position: absolute;
     width: 100%;
-    bottom: 0;
+    bottom: 0; */
 }
 
 projects__footer{
