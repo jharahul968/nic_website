@@ -198,7 +198,7 @@ def item(request, pk):
     item=Project.objects.get(pk=pk)
     return render(request, 'item.html', {'item':item})
 
-
+@login_required(login_url='/login')
 def buy(request, pk):
     item=Project.objects.get(pk=pk)
     return render(request, 'buy.html', {'item':item})
