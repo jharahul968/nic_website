@@ -19,10 +19,12 @@
 
       <a class="item_description" href="{% url 'nic_app:item' item.pk %}">
       <h2>{{ item.name }}</h2>
-      <p>{{ item.description }}</p>
+      <!-- <p>{{ item.description }}</p> -->
       <img src="{{ item.image.url }}" width="300" height="300" alt="{{item.name}}">
       <p>Rs. {{ item.price }}</p>
       </a>
+      <a href="/about#{{item.name}}">Description</a>
+
 
       <a class="buy_btn" href="{% url 'nic_app:buy' item.pk %}">Buy this &#8594;</a>
       <a class="add_to_cart" href="{% url 'nic_app:add_to_cart' item.pk %}"><img style="display:block; width:28px" src="{%static 'images/add-to-cart.png'%}" alt="add-to-cart"></a>

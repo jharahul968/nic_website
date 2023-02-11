@@ -297,9 +297,14 @@ h4{
 
 .about__footer
 {
-    /* position: absolute;
+    position: absolute;
     width: 100%;
-    bottom: 0; */
+    bottom: 0;
+}
+
+.about_footer
+{
+    bottom: 0;
 }
 
 projects__footer{
@@ -448,4 +453,38 @@ ul{
     flex-direction: column;
     justify-content: left;
     padding-bottom: 20px;
+}
+
+.school{
+    text-align: center;
+}
+
+.testimonials{
+    padding: 30px;
+}
+
+.school_testimonial{
+    margin-bottom: 30px;
+}
+
+.team{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.founder img{
+    border-radius: 50%;
+}
+
+.team img{
+    border-radius: 50%;
+}
+
+.home_partners img{
+    max-width: 30%;
+    padding: 10px;
+}
+
+.home_partners{
+    padding: 30px;
 }

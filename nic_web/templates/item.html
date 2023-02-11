@@ -18,8 +18,9 @@
 
   <div class="each_item_col">
 
-      <h2>Name: {{ item.name }}</h2>
-      <p>Description: {{ item.description }}</p>
+      <h2>{{ item.name }}</h2>
+      <!-- <p>Description: {{ item.description }}</p> -->
+      <a href="/about#{{item.name}}">Description</a>
 
       {% with query=item.name %}
       <a href="https://www.google.com/search?q={{ query|urlencode }}" target="_blank">More details</a>

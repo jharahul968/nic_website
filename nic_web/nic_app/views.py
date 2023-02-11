@@ -202,3 +202,6 @@ def item(request, pk):
 def buy(request, pk):
     item=Project.objects.get(pk=pk)
     return render(request, 'buy.html', {'item':item})
+
+def partner_schools(request):
+    return render(request, 'partner_schools.html')
