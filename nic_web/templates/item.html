@@ -1,34 +1,38 @@
 {% extends "header.html" %}
 
-
 {% load static %}
 
 <link rel="stylesheet" href="{% static 'styles/style.css' %}" />
 
 {%block title%}Singha's Gurukul | Purchase{%endblock%}
+
 {%block content%}
 
-<div class="projects__container">
+<div class="item__container">
+
   <div>
     {% include 'navbar.html' %}
   </div>
 
-  <div class="projects__item">
-    {% for item in projects %}
-    <div class="projects_items_col">
 
-      <a class="item_description" href="{% url 'nic_app:item' item.pk %}">
-      <h2>{{ item.name }}</h2>
-      <p>{{ item.description }}</p>
-      <img src="{{ item.image.url }}" width="300" height="300" alt="{{item.name}}">
-      <p>Rs. {{ item.price }}</p>
+
+  <div class="each_item_col">
+
+      <h2>Name: {{ item.name }}</h2>
+      <p>Description: {{ item.description }}</p>
+
+      {% with query=item.name %}
+      <a href="https://www.google.com/search?q={{ query|urlencode }}" target="_blank">More details</a>
+      {% endwith %}
+      <a href="{{ item.image.url }}" target="_blank">
+      <img src="{{ item.image.url }}" width="300" height="300" alt="{{item.name}}" style="padding-top:10px; padding-bottom:10px;">
       </a>
-
+      <p>Price: Rs. {{ item.price }}</p>
       <a class="buy_btn">Buy this &#8594;</a>
       <a class="add_to_cart" href="{% url 'nic_app:add_to_cart' item.pk %}"><img style="display:block; width:28px" src="{%static 'images/add-to-cart.png'%}" alt="add-to-cart"></a>
-    </div>
-    {% endfor %}
+
   </div>
+
 
   <div class='projects__footer'>
     {% include 'footer.html' %}

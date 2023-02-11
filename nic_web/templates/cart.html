@@ -24,13 +24,17 @@
   <div class="projects__item">
     {% for item in cart_items %}
     <div class="projects_items_col">
+
+      <a class="item_description" href="{% url 'nic_app:item' item.item.pk %}">
       <h2>{{ item.item.name }}</h2>
       <p>{{ item.item.description }}</p>
       <img src="{{ item.item.image.url }}" width="300" height="300" alt="{{item.item.name}}">
       <p>Rs. {{ item.item.price }}</p>
       <p>Quantity: {{ item.quantity }}</p>
+      </a>
+
       <a class="buy_btn">Buy this &#8594;</a>
-      <a class="add_to_cart" href="{% url 'nic_app:remove_from_cart' item.pk %}"><img style="display:block; width:28px" src="{%static 'images/remove-from-cart.png'%}" alt="remove-from-cart"></a>
+      <a class="add_to_cart" href="{% url 'nic_app:remove_from_cart' item.item.pk %}"><img style="display:block; width:28px" src="{%static 'images/remove-from-cart.png'%}" alt="remove-from-cart"></a>
     </div>
     {% endfor %}
   </div>
