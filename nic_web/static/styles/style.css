@@ -177,6 +177,8 @@ p{
     min-width: 250px;
     margin-bottom: 30px;
     margin:20px;
+    transition: transform 0.3s ease-in-out;
+
 }
 
 button {
@@ -193,6 +195,11 @@ button {
 
 .col-3:hover{
     transform: translateY(-5px);
+}
+
+.projects_items_col{
+    transition: transform 0.3s ease-in-out;
+
 }
 
 .projects_items_col:hover{
@@ -297,7 +304,7 @@ h4{
 
 .about__footer
 {
-    position: absolute;
+    /* position: absolute; */
     width: 100%;
     bottom: 0;
 }
@@ -468,17 +475,32 @@ ul{
 }
 
 .team{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* display: grid;
+    grid-template-columns: repeat(3, 1fr); */
+    width: 100%; 
+    overflow-x: scroll; 
+    /* overflow-x: hidden; */
+    white-space: nowrap;
 }
+.team img{
+    border-radius: 50%;
+}
+.members{
+
+}
+.member{
+    display: inline-block;
+    width: 33%;
+
+}
+
+
 
 .founder img{
     border-radius: 50%;
 }
 
-.team img{
-    border-radius: 50%;
-}
+
 
 .home_partners img{
     max-width: 30%;

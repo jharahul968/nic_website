@@ -14,20 +14,20 @@
     {% include 'navbar.html' %}
   </div>
 
-
+<div class="item_container_inner" style="display: flex; flex-direction: row; justify-content: space-around;">
 
   <div class="each_item_col">
 
       <h2>{{ item.name }}</h2>
       <!-- <p>Description: {{ item.description }}</p> -->
-      <a href="/about#{{item.name}}">Description</a>
+      <!-- <a href="/about#{{item.name}}">Description</a> -->
 
       {% with query=item.name %}
       <a href="https://www.google.com/search?q={{ query|urlencode }}" target="_blank">More details</a>
       {% endwith %}
 
       <a href="{{ item.image.url }}" target="_blank" class="popup">
-      <img src="{{ item.image.url }}" width="300" height="300" alt="{{item.name}}" style="padding-top:10px; padding-bottom:10px;">
+      <img src="{{ item.image.url }}" width="300" height="300" alt="{{item.name}}" style="padding-top:10px; padding-bottom:10px; border-radius: 20px;">
       </a>
       
       <p>Price: Rs. {{ item.price }}</p>
@@ -35,6 +35,13 @@
       <a class="add_to_cart" href="{% url 'nic_app:add_to_cart' item.pk %}"><img style="display:block; width:28px" src="{%static 'images/add-to-cart.png'%}" alt="add-to-cart"></a>
 
   </div>
+
+<div class="item_description_item" style="padding-right: 30%;">
+  <h4><u>Description</u></h2>
+  <p>{{item.description}}</p>
+</div>
+
+</div>
 
 
   <div class='projects__footer'>

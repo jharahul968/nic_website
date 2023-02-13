@@ -18,7 +18,7 @@
 
     <div class="row">
 
-      <div class="col-2 text_home">
+      <div class="col-2 text_home" style="padding-top: 40px;">
         {% comment %} <h1>Welcome to <br> Singha's Gurukul</h1> {% endcomment %}
         <h1 style='color: #fff;'>Singha's Gurukul</h1>
         <p style='color: #fff;'>Fail, fail & fail to master and unlock your true potential.</p>
@@ -41,9 +41,9 @@
 
 <!-- featured products -->
 
-<div class="projects_container">
+<div class="projects_container" style="padding-top: 30px;">
 
-  <h2 class="title"><a href='/projects'>Explore the future of learning</a></h2>
+  <h2 class="title"><a href='/projects'>Explore the future of learning </a></h2>
   <div class="home__item">
 
     {%for item in projects|slice:":3"%}
@@ -52,10 +52,10 @@
       <a class="item_description" href="{% url 'nic_app:item' item.pk %}">
       <h2>{{ item.name }}</h2>
       <!-- <p>{{ item.description }}</p> -->
-      <img src="{{ item.image.url }}" width="300" height="300" alt="{{item.name}}">
+      <img src="{{ item.image.url }}" width="300" height="300" alt="{{item.name}}" style="border-radius: 20px;">
       <p>Rs. {{ item.price }}</p>
       </a>
-      <a href="/about#{{item.name}}">Description</a>
+      <!-- <a href="/about#{{item.name}}">Description</a> -->
 
 
       <div class="buy_options">
@@ -65,7 +65,14 @@
     </div>
     </div>
     {% endfor %}
+
+      <h1 style="display: flex; flex-direction: row; margin-bottom: 80px; text-align: center; height: 100%; align-items: center; font-size:xx-large;"><u><a href="/projects">See more:</a></u></h1>
+
 </div>
+
+<div>
+</div>
+
 </div>
 
 

@@ -27,9 +27,10 @@
       {% endwith %} -->
 
       <a href="{{ item.image.url }}" target="_blank" class="popup">
-      <img src="{{ item.image.url }}" width="300" height="300" alt="{{item.name}}" style="padding-top:10px; padding-bottom:10px;">
+      <img src="{{ item.image.url }}" width="300" height="300" alt="{{item.name}}" style="padding-top:10px; padding-bottom:10px;   border-radius: 20px;">
       </a>
-      <a href="/about#{{item.name}}">Description</a>
+      <!-- <a href="/about#{{item.name}}">Description</a> -->
+      <a href="/item/{{ item.pk }}">Description</a>
 
       
       <p>Rs. {{ item.price }}</p>
