@@ -1,0 +1,35 @@
+{% extends "header.html" %} 
+
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'styles/style.css' %}">
+
+{%block title%}Singha's Gurukul | Contact{%endblock%}
+{%block content%}
+
+<div class='contact_container'>
+<div>
+{% include 'navbar.html' %}
+</div>
+
+
+
+<div class="contact_success" style="padding-top: 40px; padding-left: 20px;">
+<h2>Thanks for contacting us.</h2>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class='about__footer' style="position:absolute;">
+{% include 'footer.html' %}
+</div>
+
+</div>
+{%endblock%}

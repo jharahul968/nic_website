@@ -12,7 +12,43 @@
 {% include 'navbar.html' %}
 </div>
 
-<div class='about__footer' style="position:absolute;">
+
+
+<div class="contact_details" style="display: flex; flex-direction: row; justify-content: space-evenly;">
+
+<div class="contact_form">
+
+<h2>Contact Us</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-primary" type="submit" style='margin-top:5px;'>Submit</button>
+</form>
+
+</div>
+
+<div class="contact_numbers" style="display: flex; flex-direction: column;">
+    
+    <h2>Info</h2>
+    <p>Phone: 980XXXXXXX</p>
+    <p>Email: email@email.com</p>
+    <p>Location: <a href="https://goo.gl/maps/ViFSABidpQFt5XpbA" target="_blank">Click here</a></p>
+     
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class='about__footer' style="">
 {% include 'footer.html' %}
 </div>
 

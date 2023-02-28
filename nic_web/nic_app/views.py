@@ -17,6 +17,9 @@ from django.contrib.auth.tokens import default_token_generator
 from django.utils.encoding import force_bytes
 from django.contrib.auth.decorators import login_required
 from django.db.models import F
+from django.shortcuts import render
+from .forms import ContactForm
+from django.core.mail import send_mail
 
 # Create your views here.
 
@@ -205,3 +208,22 @@ def buy(request, pk):
 
 def partner_schools(request):
     return render(request, 'partner_schools.html')
+
+
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+            subject = f'New contact form submission from {name}'
+            body = f'Name: {name}\nEmail: {email}\nMessage: {message}'
+            sender_email = 'mail.ioehub@gmail.com' # replace with your email
+            recipient_list = ['jharahul968@gmail.com'] # replace with your email or a list of emails
+            send_mail(subject, body, sender_email, recipient_list, fail_silently=False)
+            return render(request, 'success.html')
+    else:
+        form = ContactForm()
+    return render(request, 'contact.html', {'form': form})
