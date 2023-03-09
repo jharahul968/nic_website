@@ -1,0 +1,4 @@
+pic again logo rectangle
+padding before partner schools in home and text in center
+put contact and google maps of nic in contact dai ko number
+auto scrolling in about developers

@@ -1,0 +1,14 @@
+		logo cirlce
+		logo small
+		home text alik tala
+		home navbar color orange
+		fail wala text alik bigger and highlight
+		padding above explore ...
+		projects photo alik curve
+		aile ko project details put in tutorial
+		member founder above partners
+		transition when going to projects alik smooth
+		add plus jasto kei beside projects in home
+		description beside item
+		put description kei dummy aile lai 
+		teams make rollable currently only 3 seen
